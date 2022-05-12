@@ -2,7 +2,6 @@
 
 ![Backend Tests](https://github.com/mitchlui/ai-workflow/actions/workflows/backend_ci_test.yml/badge.svg)
 ![Frontend Tests](https://github.com/mitchlui/ai-workflow/actions/workflows/frontend_ci_test.yml/badge.svg)
-![Python Formatting](https://github.com/mitchlui/ai-workflow/actions/workflows/black.yml/badge.svg)
 ![Deploy Frontend to IBM Cloud](https://github.com/mitchlui/ai-workflow/actions/workflows/ibm_frontend.yml/badge.svg)
 ![Deploy Backend to IBM Cloud](https://github.com/mitchlui/ai-workflow/actions/workflows/ibm_backend.yml/badge.svg)
 ![Deploy Database to IBM Cloud](https://github.com/mitchlui/ai-workflow/actions/workflows/ibm_database.yml/badge.svg)
