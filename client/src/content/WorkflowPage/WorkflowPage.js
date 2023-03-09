@@ -1,7 +1,7 @@
 import { React, useEffect, useState} from "react";
 import { Navigate } from 'react-router-dom';
 import { useRete } from "./rete";
-import {Button}  from 'carbon-components-react';
+import {Button, ToastNotification}  from 'carbon-components-react';
 import { CORS, API_DOMAIN } from '../../settings';
 import "./_workflow-page.scss";
 
@@ -55,10 +55,11 @@ function Editor() {
 function WorkflowPage() {
   const [runEnabled, setRunEnabled] = useState(false);
   const [saveEnabled, setSaveEnabled] = useState(false);
+  const [showWarning, setShowWarning] = useState(false);
 
-  useEffect (()=>{
-    onLoad();
-  }, []);
+  // useEffect (()=>{
+  //   onLoad();
+  // }, []);
     
   
 
@@ -111,20 +112,35 @@ function WorkflowPage() {
     )
   } 
  
-  if (cookie.get("googleObj") === "") {
-    return <Navigate to='/profile' replace={true}/>
-  } else {
+  // if (cookie.get("googleObj") === "") {
+  //   return <Navigate to='/profile' replace={true}/>
+  // } else {
     return (
-      <div className="workflow-page" >
-        <div className={"desc"}>
-          <b>Workflow Editor</b>
+        <div className="workflow-page" >
+          <div className={"desc"}>
+            <b>Workflow Editor</b>
+          </div>
+          {
+            showWarning ? (
+                <ToastNotification
+                  className='warning'
+                  kind="warning-alt"
+                  title="Warning"
+                  subtitle="This website is no longer functional. 
+                  See https://mitchlui.dev/projects/ai-workflow for more information."
+                  iconDescription="Close"
+                  onClose={() => {setShowWarning(false)}}
+                />
+              ) : (<></>)
+          }
+          <Button disabled={showWarning} onClick={() => {setShowWarning(true)}} className="save-workflow-button">Save workflow</Button>
+          <Button disabled={showWarning} onClick={() => {setShowWarning(true)}} className="run-workflow-button" >Run workflow</Button>
+          <div className={showWarning ? "warning-bg": "" }>
+          <Editor />
+          </div>
         </div>
-        <Button disabled={saveEnabled} onClick={saveWorkflow} className="save-workflow-button">Save workflow</Button>
-        <Button disabled={runEnabled} onClick={runWorkflow} className="run-workflow-button" >Run workflow</Button>
-        <Editor />
-      </div>
-    );
-    }
+      );
+   //}
 }
 
 export default WorkflowPage;

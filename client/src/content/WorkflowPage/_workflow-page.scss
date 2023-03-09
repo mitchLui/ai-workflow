@@ -40,3 +40,18 @@
 .socket.string{
   background: #2e64c7;
 }
+
+.warning-bg {
+  opacity: 0.5;
+}
+
+.warning {
+  position:fixed;
+  left:25%;
+  top:50%;
+  width: 50%;
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  z-index: 1;  
+}

@@ -7,6 +7,7 @@ import cookie from "json-cookie";
 const clientId = CLIENT_ID;
 
 function LogoutHooks() {
+  const [showWarning, setShowWarning] = React.useState(false);
   const onLogoutSuccess = (res) => {
     try{
       fetch(API_DOMAIN()+'/user/logout', {
@@ -39,9 +40,9 @@ function LogoutHooks() {
   });
 
   return (
-    <Button onClick={signOut} className="button">
-      Sign out
-    </Button>
+      <Button onClick={() => {}} className="button">
+        Sign out
+      </Button>
   );
 }
 

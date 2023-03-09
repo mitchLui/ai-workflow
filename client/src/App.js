@@ -25,9 +25,10 @@ class App extends Component {
             <Route path="/workflow" element={<WorkflowPage/>}/>
           </Routes>
         </Content>
-        <CookieConsent location="bottom" cookieName="ibm-aiworkflow-accept-cookies" expires={999} overlay>
+        {/* No more cookies since this is the static version */}
+        {/* <CookieConsent location="bottom" cookieName="ibm-aiworkflow-accept-cookies" expires={999} overlay>
             This website uses cookies to store login information. If you would like not to use cookies, don't login.
-        </CookieConsent>
+        </CookieConsent> */}
       </div>
     );
   }

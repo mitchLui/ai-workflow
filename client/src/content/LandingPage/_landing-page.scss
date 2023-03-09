@@ -1,0 +1,29 @@
+.background-container{
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  &video {
+    width:100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    object-fit: cover; 
+  }
+
+  & .background {
+    padding-top: 3rem;
+    padding-right: 3rem;
+    float: right;
+    img{
+      overflow: hidden;
+    }
+  }
+
+  & .content {
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    z-index: 1;
+  }
+}
