@@ -10,7 +10,6 @@ import LandingPage from './content/LandingPage';
 
 import ProfilePage from './content/ProfilePage';
 import WorkflowPage from './content/WorkflowPage';
-import CookieConsent from "react-cookie-consent";
 
 class App extends Component {
   render() {
