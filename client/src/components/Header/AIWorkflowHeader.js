@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Header,
   HeaderContainer,
@@ -12,14 +12,19 @@ import {
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
+  HeaderPanel,
+  ToastNotification,
 } from 'carbon-components-react';
 import {
   Notification20,
   UserAvatar20,
 } from '@carbon/icons-react';
 import { Link } from 'react-router-dom';
+import Logout from '../../components/Logout/Logout';
 
-const AIWorkflowHeader = () => (
+const AIWorkflowHeader = () => {
+  const [showProfile, setShowProfile] = useState(false);
+  return (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       <Header aria-label="AI Workflow">
@@ -56,13 +61,22 @@ const AIWorkflowHeader = () => (
           <HeaderGlobalAction aria-label="Notifications">
             <Notification20 />
           </HeaderGlobalAction>
-          <HeaderGlobalAction aria-label="Profile" onClick={()=>{window.location.assign("./profile")}} tooltipAlignment="end">
-            <UserAvatar20 />
+          <HeaderGlobalAction aria-label="Profile" onClick={()=>{setShowProfile(!showProfile)}} tooltipAlignment="end">
+            <UserAvatar20  />
           </HeaderGlobalAction>
         </HeaderGlobalBar>
+        <HeaderPanel aria-label="Header Panel" expanded={showProfile}>
+          <div className="profile-container">
+            <img className={"profile-pic"} src="https://mitchlui.dev/logo.svg" alt="logo" />
+            <p className={"bold"}>Name:</p><p>mitchLui</p>
+            <p className={"bold"}>Email:</p><p>mitch@mitchlui.dev</p>
+            <Logout/>
+          </div>
+        </HeaderPanel>
       </Header>
     )}
   />
-);
+  );
+};
 
 export default AIWorkflowHeader;

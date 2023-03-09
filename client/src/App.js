@@ -7,8 +7,6 @@ import {
   Routes 
 } from 'react-router-dom';
 import LandingPage from './content/LandingPage';
-
-import ProfilePage from './content/ProfilePage';
 import WorkflowPage from './content/WorkflowPage';
 
 class App extends Component {
@@ -19,8 +17,6 @@ class App extends Component {
         <Content>
           <Routes basename="/">
             <Route exact path="/" element={<LandingPage/>}/>
-           
-            <Route path="/profile" element={<ProfilePage/>}/>
             <Route path="/workflow" element={<WorkflowPage/>}/>
           </Routes>
         </Content>

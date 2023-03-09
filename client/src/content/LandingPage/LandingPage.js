@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button, ToastNotification} from 'carbon-components-react';
+import {Button, Link, ToastNotification} from 'carbon-components-react';
 import cookie from "json-cookie";
-import bgvideo from './bg-video1.mp4'
 import './_landing-page.scss';
 
 
@@ -30,14 +29,7 @@ const LandingPage = () => {
           IBM AI WORKFLOW
         </h1>
         <br/>
-        <Button  onClick={()=>{
-          // if (cookie.get("googleObj") === "") {
-          //   window.location.assign("./profile");
-          // } else {
-            window.location.assign("./workflow");
-          }}>
-          GET STARTED
-        </Button>
+        <Link size='lg' href="/workflow">Click here to get started</Link>
       </div>
     </div>
   );
